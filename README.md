@@ -18,11 +18,15 @@ Add the `ex_aws_sagemaker_runtime` service package to your list of dependencies 
 It depends on the `ex_aws` core package. It's recommended to make it an explicit dependency.  
 You'll also need a compatible HTTP client (`ex_aws` defaults to `hackney`).
 
+_**NOTE:** Until a new version of `ex_aws` is published to Hex that contains
+[a83dbf7](https://github.com/ex-aws/ex_aws/commit/a83dbf7068d288b6b42c295e23cef6caa95890d9),
+you'll need to add both `ex_aws` and `ex_aws_sagemaker_runtime` as dependencies that point to their git repos._
+
 ```elixir
 def deps do
   [
-    {:ex_aws, "~> 2.1"},
-    {:ex_aws_sagemaker_runtime, "~> 0.1"},
+    {:ex_aws, github: "ex-aws/ex_aws"},
+    {:ex_aws_sagemaker_runtime, github: "ex-aws/ex_aws"},
     {:hackney, "~> 1.14"},
   ]
 end
