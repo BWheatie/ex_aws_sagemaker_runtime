@@ -8,8 +8,6 @@
 
 Use it for inference with models deployed on SageMaker.
 
-Discover other ExAws services [on GitHub](https://github.com/search?l=Elixir&q=%22ex_aws%22+in%3Aname&type=Repositories) and [on Hex](https://hex.pm/packages?_utf8=%E2%9C%93&search=ex_aws&sort=recent_downloads).
-
 ## Installation
 
 Add the `ex_aws` core package and the `ex_aws_sagemaker_runtime` service package to your list of dependencies in `mix.exs`.
@@ -25,10 +23,6 @@ def deps do
   ]
 end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/ex_aws_sagemaker_runtime](https://hexdocs.pm/ex_aws_sagemaker_runtime).
 
 ## API
 

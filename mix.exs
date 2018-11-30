@@ -1,12 +1,19 @@
 defmodule ExAws.SageMakerRuntime.MixProject do
   use Mix.Project
 
+  @name __MODULE__ |> Module.split() |> Enum.take(2) |> Enum.join(".")
+  @version "0.1.0"
+  @url "https://github.com/rekki/ex_aws_sagemaker_runtime"
+  @ex_aws_services_hex_url "https://hex.pm/packages?search=ex_aws&sort=total_downloads"
+  @ex_aws_services_github_url "https://github.com/search?l=Elixir&q=%22ex_aws%22+in%3Aname&type=Repositories"
+
   def project do
     [
       app: :ex_aws_sagemaker_runtime,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.6",
       package: package(),
+      docs: [main: @name, source_ref: "v#{@version}", source_url: @url],
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -14,11 +21,15 @@ defmodule ExAws.SageMakerRuntime.MixProject do
 
   defp package do
     [
-      description: "ExAws SageMaker Runtime service package",
-      files: ["lib", "config", "mix.exs", "README*"],
+      description: "#{@name} service package",
+      files: ["lib", "mix.exs", "README*", "LICENSE", "CHANGELOG.md"],
       maintainers: ["Rekki"],
       licenses: ["MIT"],
-      links: %{github: "https://github.com/rekki/ex_aws_sagemaker_runtime"}
+      links: %{
+        "GitHub" => @url,
+        "Other ExAws services on Hex" => @ex_aws_services_hex_url,
+        "Other ExAws services on GitHub" => @ex_aws_services_github_url
+      }
     ]
   end
 
@@ -30,6 +41,7 @@ defmodule ExAws.SageMakerRuntime.MixProject do
 
   defp deps do
     [
+      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
       {:ex_aws, git: "https://github.com/ex-aws/ex_aws.git", ref: "master"}
     ]
   end
