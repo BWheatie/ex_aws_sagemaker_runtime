@@ -2,7 +2,7 @@ defmodule ExAws.SageMakerRuntime.MixProject do
   use Mix.Project
 
   @name __MODULE__ |> Module.split() |> Enum.take(2) |> Enum.join(".")
-  @version "0.1.0"
+  @version "1.0.0"
   @url "https://github.com/rekki/ex_aws_sagemaker_runtime"
   @ex_aws_services_hex_url "https://hex.pm/packages?search=ex_aws&sort=total_downloads"
   @ex_aws_services_github_url "https://github.com/search?l=Elixir&q=%22ex_aws%22+in%3Aname&type=Repositories"
