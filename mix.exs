@@ -41,8 +41,8 @@ defmodule ExAws.SageMakerRuntime.MixProject do
 
   defp deps do
     [
-      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
-      {:ex_aws, git: "https://github.com/ex-aws/ex_aws.git", ref: "master"}
+      {:ex_doc, "~> 0.20", only: :dev, runtime: false},
+      {:ex_aws, "~> 2.1.1"}
     ]
   end
 end
