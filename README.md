@@ -47,7 +47,7 @@ config :ex_aws, :sagemaker_runtime,
 
 All SageMaker Runtime API actions need to call [`ExAws.request/2`](https://hexdocs.pm/ex_aws/ExAws.html#request/2).
 ```elixir
-DataScience.ExAws.SageMakerRuntime.invoke_endpoint("my-model", %{query: "some-query})
+ExAws.SageMakerRuntime.invoke_endpoint("my-model", %{query: "some-query})
 |> ExAws.request()
 ```
 
