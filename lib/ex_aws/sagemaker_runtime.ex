@@ -21,12 +21,13 @@ defmodule ExAws.SageMakerRuntime do
     request(:invoke_endpoint, body, "/endpoints/#{endpoint_name}/invocations")
   end
 
-  defp request(action, data, path) do
+  defp request(action, data, path, params \\ [], headers \\ [], before_request \\ nil) do
     ExAws.Operation.JSON.new(:sagemaker_runtime, %{
       http_method: Map.fetch!(@actions, action),
-      path: path,
+      path: [path, "?", URI.encode_query(params)] |> IO.iodata_to_binary(),
       data: data,
-      headers: [{"content-type", "application/json"}]
+      headers: [{"content-type", "application/json"} | headers],
+      before_request: before_request
     })
   end
 end
